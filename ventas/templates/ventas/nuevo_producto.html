@@ -1,0 +1,13 @@
+{% extends 'ventas/header-main.html' %}
+
+{% block content %}
+<br>
+<div class="form">
+    <h2>Ingrese producto</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}                
+        <input type="submit" value="Guardar producto!" class="button"/>
+    </form>
+</div>
+{% endblock %}
