@@ -1,13 +1,20 @@
-{% extends 'ventas/header-main.html' %}
 
-{% block content %}
-<br>
+
 <div class="form">
     <h2>Ingrese producto</h2>
-    <form method="post">
+    <form role="form"  enctype="multipart/form-data" action="" method="POST" id="upload-image-form">
         {% csrf_token %}
-        {{ form.as_p }}                
+        {{ form.as_p }} 
+        Marca: 
+        <select id="select" name="select">
+            <option id = "Totto">Totto</option>
+            <option id = "Nike">Nike</option>
+            <option id = "Adidas">Adidas</option>
+            <option id = "Under Armour">Under armour</option>
+            <option id = "Gucci">Gucci</option>
+        </select><br /><br/>
+        <input type="hidden" id="mc" name="mc" value="Totto" />
+        Marca seleccionada: <label id="marcaselec" name = "marcaselec">Totto</label><br /><br/>
         <input type="submit" value="Guardar producto!" class="button"/>
     </form>
 </div>
-{% endblock %}
